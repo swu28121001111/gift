@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy birthday xr</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style01.css">
+    <link rel="stylesheet" href="style/style02.css">
+
+</head>
+<body>
+  <section>
+    <h3>Happy Birthday for xr</h3>
+    
+    <div class="set">
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div>
+      <div><img src="img/cake03.png"></div>
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div>
+      <div><img src="img/cake03.png"></div>
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div> 
+    </div>
+    <div class="set set2">
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div>
+      <div><img src="img/cake03.png"></div>
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div>
+      <div><img src="img/cake03.png"></div>
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div> 
+    </div>
+    <div class="set set3">
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div>
+      <div><img src="img/cake03.png"></div>
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div>
+      <div><img src="img/cake03.png"></div>
+      <div><img src="img/cake01.png"></div>
+      <div><img src="img/cake02.png"></div> 
+    </div>
+   
+  </section>
+  <div class="box1">1</div>
+  <div class="box1">1</div>
+  <div class="box1">1</div>
+  <div class="container">
+    <div class="navbar">
+      <img src="img/xr(1).png" class="logo">
+    </div>
+    <div class="content">
+      <div class="left-col">
+        <h2>wish   you</h2>
+        <h1>依然   美丽<br>天天  开心</h1>
+   
+        
+      </div>
+      <div class="right-col">
+        <p>👀 点击一下</p>
+        <img src="img/play.png" id="icon">
+      </div>
+    </div>
+  </div>
+  <audio id="mySong">
+    <source src="./media/2109404279.mp3" type="audio/mp3">
+  </audio>
+  <script src="js/script.js"></script>
+  <script src="js/jquery.js"></script>
+ 
+  <div class="box1">1</div>
+  <div class="box1">1</div>
+  <div class="box1">1</div>
+
+
+  <div class="container1">
+    <div class="valentine">
+        <div class="envelope"></div>
+        <div class="card">
+            <div class="txt"></div>
+        </div>
+        <div class="front"></div>
+    </div>
+    <div class="shadow"></div>
+</div>
+\
+</body>
+
+
+</html>
+<script>
+  $(".valentine").mouseenter(() => {
+      $(".card").stop().animate({
+          top:"-90px"
+      },"slow")
+      typewriter()
+  })
+  $(".valentine").mouseleave(() => {
+      $(".card").stop().animate({
+          top:0
+      },"slow")
+  })
+  
+  function typewriter(){
+      const el = $(".txt")
+      const str = `小姐姐:
+          <div class="content">祝小姐姐生日快乐，希望你每天开心！幸福指数爆满！</div>
+      `
+  
+      let progress = 0
+      const timer = setInterval(() => {
+          const curr = str.substr(progress,1)
+          if(curr === "<"){
+              progress = str.indexOf(">",progress) + 1
+          }else{
+              progress++
+          }
+          el.html(str.substring(0,progress) + (progress & 1 ? "_ " : ""))
+          if(progress > str.length){
+              clearInterval(timer)
+          }
+      },100) 
+  }
+  </script>
+  
